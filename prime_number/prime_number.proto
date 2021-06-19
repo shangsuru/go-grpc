@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option go_package = "/primepb";
+
+message Number { int32 number = 1; }
+
+message PrimeFactor { int32 prime = 1; }
+
+service PrimeNumberDecomposition {
+  rpc Decompose(Number) returns (stream PrimeFactor) {};
+}
